@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">A21 Game Optimizer</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_monitor">Monitor</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="dashboard_eyebrow">GALAXY A21 · COD MOBILE</string>
+    <string name="dashboard_title">Game readiness</string>
+    <string name="status_ready">Ready to launch</string>
+    <string name="status_attention">Review warnings</string>
+    <string name="status_blocked">Cooling required</string>
+    <string name="readiness_score">Readiness %1$d/100</string>
+    <string name="device_status">Device status</string>
+    <string name="refresh">Refresh</string>
+    <string name="refreshing">Checking…</string>
+    <string name="memory">Memory</string>
+    <string name="battery">Battery</string>
+    <string name="thermal">Thermal</string>
+    <string name="processor">Processor</string>
+    <string name="available_format">%1$s available</string>
+    <string name="used_format">%1$s used</string>
+    <string name="charging">Charging</string>
+    <string name="not_charging">On battery</string>
+    <plurals name="cores_format">
+        <item quantity="one">%1$d core</item>
+        <item quantity="other">%1$d cores</item>
+    </plurals>
+    <string name="cpu_restricted">System CPU load is restricted by Android</string>
+    <string name="not_supported">Not supported on this device</string>
+    <string name="unknown">Unavailable</string>
+    <string name="temperature_format">%1$.1f°C</string>
+    <string name="thermal_normal">Normal</string>
+    <string name="thermal_light">Light</string>
+    <string name="thermal_moderate">Moderate</string>
+    <string name="thermal_severe">Severe</string>
+    <string name="thermal_critical">Critical</string>
+    <string name="thermal_emergency">Emergency</string>
+    <string name="thermal_shutdown">Shutdown</string>
+    <string name="readiness_ready_short">READY</string>
+    <string name="readiness_check_short">CHECK</string>
+    <string name="readiness_hold_short">HOLD</string>
+
+    <string name="performance_profile">Performance profile</string>
+    <string name="profile_balanced">Balanced</string>
+    <string name="profile_performance">Performance</string>
+    <string name="profile_extreme">Extreme</string>
+    <string name="profile_balanced_description">Stable checks with battery-aware guidance.</string>
+    <string name="profile_performance_description">Prioritizes game readiness and flags resource contention.</string>
+    <string name="profile_extreme_description">Strict thermal guard for maximum sustainable performance.</string>
+    <string name="profile_truth_note">Profiles tune pre-launch checks and recommendations. Android does not let another app overclock the CPU/GPU or change the game’s FPS cap.</string>
+    <string name="extreme_heat_warning">Extreme never bypasses thermal protection. Launch is blocked at unsafe heat levels.</string>
+
+    <string name="game_launcher">Game launcher</string>
+    <string name="call_of_duty_mobile">Call of Duty: Mobile</string>
+    <string name="installed">Installed</string>
+    <string name="game_not_installed">Game not installed</string>
+    <string name="open_official_store">Open official store</string>
+    <string name="region_global">Global</string>
+    <string name="region_garena">Garena</string>
+    <string name="region_vietnam">Vietnam</string>
+    <string name="region_china">China</string>
+    <string name="boost_game">BOOST GAME</string>
+    <string name="preparing_boost">CHECKING DEVICE…</string>
+    <string name="boost_caption">Runs a real pre-launch safety check, opens the official game, then closes itself to release resources.</string>
+
+    <string name="monitor_eyebrow">HONEST PERFORMANCE DATA</string>
+    <string name="monitor_title">Performance monitor</string>
+    <string name="monitor_intro">Android does not expose another app’s rendered frames through a normal public API. No FPS value is estimated or fabricated.</string>
+    <string name="fps">FPS</string>
+    <string name="frame_time">Frame time</string>
+    <string name="fps_unavailable">FPS data unavailable through Android APIs</string>
+    <string name="frame_time_unavailable">Frame-time data unavailable through Android APIs</string>
+    <string name="monitor_available_title">Available device signals</string>
+    <string name="monitor_available_body">RAM, battery and thermal status are read only while this screen is open or when you tap Refresh. There is no overlay, polling service or background monitor competing with the game.</string>
+    <string name="thermal_guidance_title">Thermal guidance</string>
+    <string name="thermal_guidance_normal">Temperature pressure is currently low. Real performance still depends on the game, room temperature and battery state.</string>
+    <string name="thermal_guidance_warm">The device is warming up. Lower in-game graphics, reduce screen brightness and remove a thick case if safe.</string>
+    <string name="thermal_guidance_hot">Android reports serious thermal pressure. Let the phone cool before using a high-performance profile.</string>
+
+    <string name="settings_eyebrow">SAFE · LOCAL · NO ROOT</string>
+    <string name="settings_title">Optimizer settings</string>
+    <string name="quick_system_settings">Quick system settings</string>
+    <string name="battery_saver_title">Battery Saver</string>
+    <string name="battery_saver_body">Review power saving before a performance session.</string>
+    <string name="display_title">Display &amp; brightness</string>
+    <string name="display_body">Lower brightness manually when heat is building.</string>
+    <string name="dnd_title">Do Not Disturb</string>
+    <string name="dnd_body">Configure interruptions in Android settings.</string>
+    <string name="battery_optimization_title">Battery optimization</string>
+    <string name="battery_optimization_body">Review Android’s optimization list; no setting is changed silently.</string>
+    <string name="opens_android_settings">Opens Android settings</string>
+    <string name="privacy_title">Privacy by design</string>
+    <string name="privacy_body">No internet permission. No account data. No analytics. No root. No accessibility service. No game files are read or modified.</string>
+    <string name="limits_title">What this app can—and cannot—do</string>
+    <string name="limits_body">It can check device readiness, detect official regional packages, warn about heat and launch the game with minimal overhead. It cannot kill other apps on modern Android, change CPU/GPU clocks, bypass thermal limits, inject memory, alter anti-cheat, or unlock an FPS mode the game/device does not support.</string>
+    <string name="version_format">Version %1$s</string>
+
+    <string name="prelaunch_title">Pre-launch report</string>
+    <string name="prelaunch_ready">The game can be launched. The optimizer will close immediately afterward so it does not compete for memory or CPU.</string>
+    <string name="prelaunch_blocked">Launch is paused because the selected game is missing or current heat makes this profile unsafe.</string>
+    <string name="launch_game">Launch &amp; close optimizer</string>
+    <string name="close">Close</string>
+    <string name="check_again">Check again</string>
+    <string name="finding_ready">Core device checks passed.</string>
+    <string name="finding_game_missing">The selected regional game package is not installed.</string>
+    <string name="finding_thermal_danger">Android reports severe thermal pressure. Reduce graphics and let the phone cool.</string>
+    <string name="finding_thermal_warm">The device is warming up; sustained FPS may drop.</string>
+    <string name="finding_battery_hot">Battery temperature is high. Reduce brightness and pause charging if appropriate.</string>
+    <string name="finding_low_memory">Available RAM is low. Close unneeded apps from Android’s Recents screen.</string>
+    <string name="finding_low_battery">Battery is at or below 15%; performance may be limited.</string>
+    <string name="finding_battery_saver">Battery Saver is enabled and may limit sustained performance.</string>
+    <string name="finding_limited_data">Thermal status is not exposed on this Android version/device.</string>
+    <string name="refresh_error">Some device data could not be read. Unsupported values were skipped safely.</string>
+    <string name="launch_error">The game could not be opened. Its installation may have changed.</string>
+    <string name="settings_error">This settings page is not available on this device.</string>
+</resources>

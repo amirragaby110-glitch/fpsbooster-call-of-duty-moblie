@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بهینه‌ساز بازی A21</string>
+    <string name="nav_dashboard">داشبورد</string>
+    <string name="nav_monitor">پایش</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <string name="dashboard_eyebrow">GALAXY A21 · COD MOBILE</string>
+    <string name="dashboard_title">آمادگی بازی</string>
+    <string name="status_ready">آماده اجرا</string>
+    <string name="status_attention">هشدارها را بررسی کنید</string>
+    <string name="status_blocked">نیاز به خنک‌شدن</string>
+    <string name="readiness_score">آمادگی %1$d از ۱۰۰</string>
+    <string name="device_status">وضعیت دستگاه</string>
+    <string name="refresh">به‌روزرسانی</string>
+    <string name="refreshing">در حال بررسی…</string>
+    <string name="memory">حافظه</string>
+    <string name="battery">باتری</string>
+    <string name="thermal">حرارت</string>
+    <string name="processor">پردازنده</string>
+    <string name="available_format">%1$s آزاد</string>
+    <string name="used_format">%1$s مصرف‌شده</string>
+    <string name="charging">در حال شارژ</string>
+    <string name="not_charging">در حال مصرف باتری</string>
+    <plurals name="cores_format">
+        <item quantity="one">%1$d هسته</item>
+        <item quantity="other">%1$d هسته</item>
+    </plurals>
+    <string name="cpu_restricted">بار کلی CPU توسط اندروید محدود شده است</string>
+    <string name="not_supported">در این دستگاه پشتیبانی نمی‌شود</string>
+    <string name="unknown">در دسترس نیست</string>
+    <string name="temperature_format">%1$.1f درجه</string>
+    <string name="thermal_normal">عادی</string>
+    <string name="thermal_light">کم</string>
+    <string name="thermal_moderate">متوسط</string>
+    <string name="thermal_severe">شدید</string>
+    <string name="thermal_critical">بحرانی</string>
+    <string name="thermal_emergency">اضطراری</string>
+    <string name="thermal_shutdown">خاموشی</string>
+    <string name="readiness_ready_short">آماده</string>
+    <string name="readiness_check_short">بررسی</string>
+    <string name="readiness_hold_short">توقف</string>
+
+    <string name="performance_profile">پروفایل عملکرد</string>
+    <string name="profile_balanced">متعادل</string>
+    <string name="profile_performance">عملکرد</string>
+    <string name="profile_extreme">حداکثری</string>
+    <string name="profile_balanced_description">بررسی پایدار با راهنمایی سازگار با باتری.</string>
+    <string name="profile_performance_description">اولویت با آمادگی بازی و شناسایی رقابت منابع.</string>
+    <string name="profile_extreme_description">محافظ حرارتی سخت‌گیرانه برای بیشترین عملکرد پایدار.</string>
+    <string name="profile_truth_note">پروفایل‌ها بررسی‌ها و پیشنهادهای پیش از اجرا را تنظیم می‌کنند. اندروید به برنامه‌ای دیگر اجازه اورکلاک CPU/GPU یا تغییر سقف FPS بازی را نمی‌دهد.</string>
+    <string name="extreme_heat_warning">حالت حداکثری هرگز محافظ حرارتی را دور نمی‌زند و در گرمای ناامن اجرا را متوقف می‌کند.</string>
+
+    <string name="game_launcher">اجرای بازی</string>
+    <string name="call_of_duty_mobile">Call of Duty: Mobile</string>
+    <string name="installed">نصب‌شده</string>
+    <string name="game_not_installed">بازی نصب نیست</string>
+    <string name="open_official_store">باز کردن فروشگاه رسمی</string>
+    <string name="region_global">گلوبال</string>
+    <string name="region_garena">گارنا</string>
+    <string name="region_vietnam">ویتنام</string>
+    <string name="region_china">چین</string>
+    <string name="boost_game">BOOST GAME</string>
+    <string name="preparing_boost">در حال بررسی دستگاه…</string>
+    <string name="boost_caption">یک بررسی واقعی و امن انجام می‌دهد، بازی رسمی را باز می‌کند و سپس برای آزادکردن منابع بسته می‌شود.</string>
+
+    <string name="monitor_eyebrow">داده‌های واقعی عملکرد</string>
+    <string name="monitor_title">پایش عملکرد</string>
+    <string name="monitor_intro">اندروید با API عمومی، فریم‌های رندرشده برنامه‌ای دیگر را ارائه نمی‌کند. هیچ عدد FPS تخمینی یا جعلی نمایش داده نمی‌شود.</string>
+    <string name="fps">FPS</string>
+    <string name="frame_time">زمان فریم</string>
+    <string name="fps_unavailable">داده FPS از طریق APIهای اندروید در دسترس نیست</string>
+    <string name="frame_time_unavailable">داده زمان فریم از طریق APIهای اندروید در دسترس نیست</string>
+    <string name="monitor_available_title">سیگنال‌های قابل دسترس دستگاه</string>
+    <string name="monitor_available_body">RAM، باتری و حرارت فقط هنگام باز بودن این صفحه یا لمس «به‌روزرسانی» خوانده می‌شوند. هیچ Overlay، سرویس Polling یا پایش پس‌زمینه‌ای با بازی رقابت نمی‌کند.</string>
+    <string name="thermal_guidance_title">راهنمای حرارتی</string>
+    <string name="thermal_guidance_normal">فشار حرارتی فعلاً پایین است. عملکرد واقعی همچنان به بازی، دمای محیط و وضعیت باتری بستگی دارد.</string>
+    <string name="thermal_guidance_warm">دستگاه در حال گرم‌شدن است. گرافیک داخل بازی و روشنایی نمایشگر را کم کنید و در صورت ایمن‌بودن قاب ضخیم را بردارید.</string>
+    <string name="thermal_guidance_hot">اندروید فشار حرارتی جدی گزارش می‌کند. پیش از پروفایل پرقدرت اجازه دهید گوشی خنک شود.</string>
+
+    <string name="settings_eyebrow">امن · محلی · بدون روت</string>
+    <string name="settings_title">تنظیمات بهینه‌ساز</string>
+    <string name="quick_system_settings">تنظیمات سریع سیستم</string>
+    <string name="battery_saver_title">ذخیره باتری</string>
+    <string name="battery_saver_body">پیش از بازی، حالت ذخیره نیرو را بررسی کنید.</string>
+    <string name="display_title">نمایشگر و روشنایی</string>
+    <string name="display_body">هنگام افزایش گرما، روشنایی را دستی کاهش دهید.</string>
+    <string name="dnd_title">مزاحم نشوید</string>
+    <string name="dnd_body">وقفه‌ها را در تنظیمات اندروید مدیریت کنید.</string>
+    <string name="battery_optimization_title">بهینه‌سازی باتری</string>
+    <string name="battery_optimization_body">فهرست بهینه‌سازی اندروید را بررسی کنید؛ هیچ تنظیمی بی‌اجازه تغییر نمی‌کند.</string>
+    <string name="opens_android_settings">تنظیمات اندروید را باز می‌کند</string>
+    <string name="privacy_title">حریم خصوصی از پایه</string>
+    <string name="privacy_body">بدون مجوز اینترنت، داده حساب، آنالیتیکس، روت یا سرویس Accessibility. هیچ فایل بازی خوانده یا تغییر داده نمی‌شود.</string>
+    <string name="limits_title">این برنامه چه کاری می‌تواند و نمی‌تواند انجام دهد</string>
+    <string name="limits_body">می‌تواند آمادگی دستگاه را بررسی کند، نسخه‌های رسمی منطقه‌ای را تشخیص دهد، درباره گرما هشدار دهد و بازی را با سربار کم اجرا کند. نمی‌تواند در اندروید جدید همه برنامه‌ها را ببندد، کلاک CPU/GPU را تغییر دهد، محدودیت حرارتی یا Anti-Cheat را دور بزند، حافظه تزریق کند یا FPS پشتیبانی‌نشده را باز کند.</string>
+    <string name="version_format">نسخه %1$s</string>
+
+    <string name="prelaunch_title">گزارش پیش از اجرا</string>
+    <string name="prelaunch_ready">بازی قابل اجراست. بهینه‌ساز بلافاصله پس از آن بسته می‌شود تا RAM یا CPU را اشغال نکند.</string>
+    <string name="prelaunch_blocked">اجرا متوقف شده چون بازی انتخابی نصب نیست یا گرمای فعلی برای این پروفایل ایمن نیست.</string>
+    <string name="launch_game">اجرا و بستن بهینه‌ساز</string>
+    <string name="close">بستن</string>
+    <string name="check_again">بررسی دوباره</string>
+    <string name="finding_ready">بررسی‌های اصلی دستگاه با موفقیت انجام شد.</string>
+    <string name="finding_game_missing">نسخه منطقه‌ای انتخاب‌شده بازی نصب نیست.</string>
+    <string name="finding_thermal_danger">اندروید فشار حرارتی شدید گزارش می‌کند. گرافیک را کم کنید و اجازه دهید گوشی خنک شود.</string>
+    <string name="finding_thermal_warm">دستگاه در حال گرم‌شدن است و FPS پایدار ممکن است افت کند.</string>
+    <string name="finding_battery_hot">دمای باتری بالاست. روشنایی را کم و در صورت مناسب‌بودن شارژ را متوقف کنید.</string>
+    <string name="finding_low_memory">RAM آزاد کم است. برنامه‌های غیرضروری را از صفحه برنامه‌های اخیر ببندید.</string>
+    <string name="finding_low_battery">باتری ۱۵٪ یا کمتر است و ممکن است عملکرد محدود شود.</string>
+    <string name="finding_battery_saver">ذخیره باتری فعال است و ممکن است عملکرد پایدار را محدود کند.</string>
+    <string name="finding_limited_data">وضعیت حرارتی در این نسخه اندروید یا دستگاه ارائه نمی‌شود.</string>
+    <string name="refresh_error">بخشی از داده‌های دستگاه خوانده نشد؛ موارد پشتیبانی‌نشده با امنیت رد شدند.</string>
+    <string name="launch_error">بازی باز نشد؛ شاید وضعیت نصب آن تغییر کرده باشد.</string>
+    <string name="settings_error">این صفحه تنظیمات روی دستگاه موجود نیست.</string>
+</resources>

@@ -1,0 +1,112 @@
+name: Android validation and APK
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      TARGET_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
+    steps:
+      - name: Check out the Arena branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle 8.14.5
+        uses: gradle/actions/setup-gradle@v5
+        with:
+          gradle-version: "8.14.5"
+
+      - name: Generate Gradle wrapper
+        run: gradle wrapper --gradle-version 8.14.5 --distribution-type bin
+
+      - name: Create isolated development signing key
+        shell: bash
+        run: |
+          keytool -genkeypair -v \
+            -keystore "$RUNNER_TEMP/a21-dev-release.jks" \
+            -storepass "$A21_SIGNING_STORE_PASSWORD" \
+            -keypass "$A21_SIGNING_KEY_PASSWORD" \
+            -alias "$A21_SIGNING_KEY_ALIAS" \
+            -keyalg RSA -keysize 3072 -validity 3650 \
+            -dname "CN=A21 Optimizer Development Build,OU=Open Source,O=Arena,L=Local,C=US"
+        env:
+          A21_SIGNING_STORE_PASSWORD: arena-a21-build
+          A21_SIGNING_KEY_PASSWORD: arena-a21-build
+          A21_SIGNING_KEY_ALIAS: a21-development
+
+      - name: Unit tests, release lint, UI-test compilation, and release build
+        shell: bash
+        run: ./gradlew --stacktrace testDebugUnitTest lintRelease assembleAndroidTest assembleRelease 2>&1 | tee ci-build.log
+        env:
+          A21_SIGNING_STORE_FILE: ${{ runner.temp }}/a21-dev-release.jks
+          A21_SIGNING_STORE_PASSWORD: arena-a21-build
+          A21_SIGNING_KEY_PASSWORD: arena-a21-build
+          A21_SIGNING_KEY_ALIAS: a21-development
+
+      - name: Preserve build diagnostics on failure
+        if: failure()
+        shell: bash
+        run: |
+          tail -n 500 ci-build.log > ci-failure.log
+          git config user.name "arena-build-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add ci-failure.log gradlew gradlew.bat gradle/wrapper
+          git commit -m "ci: preserve failed build diagnostics [skip ci]"
+          git push origin "HEAD:${TARGET_BRANCH}"
+
+      - name: Capture validation reports
+        shell: bash
+        run: |
+          mkdir -p artifacts/validation/unit-tests
+          LINT_REPORT="$(find app/build -type f -name 'lint-results-release.txt' | head -1)"
+          test -n "$LINT_REPORT"
+          cp "$LINT_REPORT" artifacts/validation/lint-results-release.txt
+          cp app/build/test-results/testDebugUnitTest/TEST-*.xml artifacts/validation/unit-tests/
+          {
+            echo "Validated commit: $GITHUB_SHA"
+            echo "Gradle tasks: testDebugUnitTest lintRelease assembleAndroidTest assembleRelease"
+            echo "Runner: $RUNNER_OS/$RUNNER_ARCH"
+          } > artifacts/validation/summary.txt
+
+      - name: Verify APK signature and package
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          APKSIGNER="$(find "$SDK_ROOT/build-tools" -type f -name apksigner | sort -V | tail -1)"
+          "$APKSIGNER" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
+          mkdir -p artifacts
+          cp app/build/outputs/apk/release/app-release.apk \
+            artifacts/A21GameOptimizer-v1.0.0-release-dev-signed.apk
+          sha256sum artifacts/A21GameOptimizer-v1.0.0-release-dev-signed.apk \
+            > artifacts/A21GameOptimizer-v1.0.0-release-dev-signed.apk.sha256
+
+      - name: Publish validated APK back to this branch
+        shell: bash
+        run: |
+          git config user.name "arena-build-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add gradlew gradlew.bat gradle/wrapper artifacts
+          if ! git diff --cached --quiet; then
+            git commit -m "build: add validated installable APK [skip ci]"
+            git push origin "HEAD:${TARGET_BRANCH}"
+          fi
