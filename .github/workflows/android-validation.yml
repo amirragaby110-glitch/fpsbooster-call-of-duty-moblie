@@ -74,6 +74,20 @@ jobs:
           git commit -m "ci: preserve failed build diagnostics [skip ci]"
           git push origin "HEAD:${TARGET_BRANCH}"
 
+      - name: Capture validation reports
+        shell: bash
+        run: |
+          mkdir -p artifacts/validation/unit-tests
+          LINT_REPORT="$(find app/build -type f -name 'lint-results-release.txt' | head -1)"
+          test -n "$LINT_REPORT"
+          cp "$LINT_REPORT" artifacts/validation/lint-results-release.txt
+          cp app/build/test-results/testDebugUnitTest/TEST-*.xml artifacts/validation/unit-tests/
+          {
+            echo "Validated commit: $GITHUB_SHA"
+            echo "Gradle tasks: testDebugUnitTest lintRelease assembleAndroidTest assembleRelease"
+            echo "Runner: $RUNNER_OS/$RUNNER_ARCH"
+          } > artifacts/validation/summary.txt
+
       - name: Verify APK signature and package
         shell: bash
         run: |
