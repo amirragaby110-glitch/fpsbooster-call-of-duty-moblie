@@ -50,7 +50,7 @@ APK مخزن یک build تأییدشده و **development-signed** برای نص
 
 - JDK 17
 - Android SDK Platform 36 و Build Tools
-- Gradle 8.11.1 (یا Gradle Wrapper موجود در مخزن)
+- Gradle 8.14.5 (یا Gradle Wrapper موجود در مخزن)
 
 ```bash
 ./gradlew testDebugUnitTest lintRelease assembleAndroidTest assembleDebug

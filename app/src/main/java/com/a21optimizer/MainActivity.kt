@@ -2,7 +2,6 @@ package com.a21optimizer
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
@@ -14,6 +13,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
+import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.a21optimizer.ui.A21OptimizerApp
 import com.a21optimizer.ui.MainViewModel
@@ -90,7 +90,7 @@ class MainActivity : ComponentActivity() {
     private fun openStore(packageName: String) {
         val marketIntent = Intent(
             Intent.ACTION_VIEW,
-            Uri.parse("market://details?id=$packageName"),
+            "market://details?id=$packageName".toUri(),
         ).addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
         try {
             startActivity(marketIntent)
@@ -99,7 +99,7 @@ class MainActivity : ComponentActivity() {
                 startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("https://play.google.com/store/apps/details?id=$packageName"),
+                        "https://play.google.com/store/apps/details?id=$packageName".toUri(),
                     ).addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT),
                 )
             }.onFailure { AppLog.error("No store or browser available", it) }

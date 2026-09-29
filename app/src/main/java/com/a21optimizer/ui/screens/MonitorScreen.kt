@@ -33,7 +33,6 @@ import com.a21optimizer.ui.components.ScreenHeader
 import com.a21optimizer.ui.components.SectionTitle
 import com.a21optimizer.ui.theme.SignalGreen
 import com.a21optimizer.ui.theme.TacticalBlue
-import com.a21optimizer.ui.theme.WarningAmber
 
 @Composable
 fun MonitorScreen(
