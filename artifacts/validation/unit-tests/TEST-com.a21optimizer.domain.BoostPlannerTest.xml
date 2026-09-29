@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.a21optimizer.domain.BoostPlannerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-29T18:20:27" hostname="runnervmtr4k5" time="0.032">
+<testsuite name="com.a21optimizer.domain.BoostPlannerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-29T18:26:00.449Z" hostname="runnervmtr4k5" time="0.029">
   <properties/>
-  <testcase name="healthy device is ready without invented optimizations" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.028"/>
+  <testcase name="healthy device is ready without invented optimizations" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.024"/>
   <testcase name="high battery temperature blocks extreme profile" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.0"/>
-  <testcase name="critical thermal pressure blocks every profile" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.002"/>
+  <testcase name="critical thermal pressure blocks every profile" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.0"/>
   <testcase name="missing game always blocks launch" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.0"/>
   <testcase name="low memory low battery and saver are reported together" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.0"/>
   <testcase name="severe thermal pressure blocks extreme but warns performance" classname="com.a21optimizer.domain.BoostPlannerTest" time="0.0"/>
