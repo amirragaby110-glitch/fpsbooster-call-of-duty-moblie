@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.a21optimizer.domain.ThermalLevelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-29T18:13:49" hostname="runnervmtr4k5" time="0.001">
+<testsuite name="com.a21optimizer.domain.ThermalLevelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-29T18:20:27" hostname="runnervmtr4k5" time="0.0">
   <properties/>
   <testcase name="only severe and above are dangerous" classname="com.a21optimizer.domain.ThermalLevelTest" time="0.0"/>
   <testcase name="platform statuses map without guessing unknown values" classname="com.a21optimizer.domain.ThermalLevelTest" time="0.0"/>
