@@ -55,12 +55,24 @@ jobs:
           A21_SIGNING_KEY_ALIAS: a21-development
 
       - name: Unit tests, release lint, UI-test compilation, and release build
-        run: ./gradlew --stacktrace testDebugUnitTest lintRelease assembleAndroidTest assembleRelease
+        shell: bash
+        run: ./gradlew --stacktrace testDebugUnitTest lintRelease assembleAndroidTest assembleRelease 2>&1 | tee ci-build.log
         env:
           A21_SIGNING_STORE_FILE: ${{ runner.temp }}/a21-dev-release.jks
           A21_SIGNING_STORE_PASSWORD: arena-a21-build
           A21_SIGNING_KEY_PASSWORD: arena-a21-build
           A21_SIGNING_KEY_ALIAS: a21-development
+
+      - name: Preserve build diagnostics on failure
+        if: failure()
+        shell: bash
+        run: |
+          tail -n 500 ci-build.log > ci-failure.log
+          git config user.name "arena-build-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add ci-failure.log gradlew gradlew.bat gradle/wrapper
+          git commit -m "ci: preserve failed build diagnostics [skip ci]"
+          git push origin "HEAD:${TARGET_BRANCH}"
 
       - name: Verify APK signature and package
         shell: bash
