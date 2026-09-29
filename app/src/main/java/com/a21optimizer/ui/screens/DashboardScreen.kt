@@ -27,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -129,8 +130,9 @@ fun DashboardScreen(
             )
             MetricCard(
                 label = stringResource(R.string.processor),
-                value = snapshot.cpuCoreCount?.let { stringResource(R.string.cores_format, it) }
-                    ?: stringResource(R.string.unknown),
+                value = snapshot.cpuCoreCount?.let {
+                    pluralStringResource(R.plurals.cores_format, it, it)
+                } ?: stringResource(R.string.unknown),
                 detail = stringResource(R.string.cpu_restricted),
                 accent = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.weight(1f),

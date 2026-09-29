@@ -22,7 +22,10 @@
     <string name="used_format">%1$s مصرف‌شده</string>
     <string name="charging">در حال شارژ</string>
     <string name="not_charging">در حال مصرف باتری</string>
-    <string name="cores_format">%1$d هسته</string>
+    <plurals name="cores_format">
+        <item quantity="one">%1$d هسته</item>
+        <item quantity="other">%1$d هسته</item>
+    </plurals>
     <string name="cpu_restricted">بار کلی CPU توسط اندروید محدود شده است</string>
     <string name="not_supported">در این دستگاه پشتیبانی نمی‌شود</string>
     <string name="unknown">در دسترس نیست</string>

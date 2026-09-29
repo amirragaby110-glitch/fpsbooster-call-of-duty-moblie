@@ -49,8 +49,8 @@ APK مخزن یک build تأییدشده و **development-signed** برای نص
 پیش‌نیازها:
 
 - JDK 17
-- Android SDK Platform 35 و Build Tools
-- Gradle 8.9 (یا Gradle Wrapper موجود در مخزن)
+- Android SDK Platform 36 و Build Tools
+- Gradle 8.11.1 (یا Gradle Wrapper موجود در مخزن)
 
 ```bash
 ./gradlew testDebugUnitTest lintRelease assembleAndroidTest assembleDebug

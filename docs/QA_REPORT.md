@@ -4,7 +4,7 @@
 
 The `android-validation.yml` workflow performs these gates on a clean Ubuntu runner with JDK 17 and Android SDK:
 
-1. Generate and validate the pinned Gradle 8.9 wrapper.
+1. Generate and validate the pinned Gradle 8.11.1 wrapper.
 2. Compile all Kotlin/Compose production sources and resources.
 3. Run JVM unit tests (`testDebugUnitTest`).
 4. Run release Android Lint with `abortOnError=true` (`lintRelease`).

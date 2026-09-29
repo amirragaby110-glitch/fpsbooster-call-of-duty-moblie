@@ -22,7 +22,10 @@
     <string name="used_format">%1$s used</string>
     <string name="charging">Charging</string>
     <string name="not_charging">On battery</string>
-    <string name="cores_format">%1$d cores</string>
+    <plurals name="cores_format">
+        <item quantity="one">%1$d core</item>
+        <item quantity="other">%1$d cores</item>
+    </plurals>
     <string name="cpu_restricted">System CPU load is restricted by Android</string>
     <string name="not_supported">Not supported on this device</string>
     <string name="unknown">Unavailable</string>
